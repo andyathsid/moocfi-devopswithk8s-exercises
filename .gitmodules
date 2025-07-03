@@ -1,3 +1,6 @@
 [submodule "material-example"]
 	path = material-example
 	url = https://github.com/kubernetes-hy/material-example.git
+[submodule "KubernetesSubmissions"]
+	path = KubernetesSubmissions
+	url = https://github.com/mluukkai/KubernetesSubmissions.git
