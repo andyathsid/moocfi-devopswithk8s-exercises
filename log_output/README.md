@@ -24,18 +24,12 @@ A simple Python application that generates a random UUID string on startup and o
    kubectl config use-context k3d-log-output-cluster
    ```
 
-5. **Deploy the application:**
+5. **Deploy the application using the manifest:**
    ```bash
-   kubectl create deployment log-output-dep --image=log-output:latest
+   kubectl apply -f manifest/deployment.yaml
    ```
 
-6. **Edit deployment to use local image (if needed):**
-   ```bash
-   kubectl edit deployment log-output-dep
-   ```
-   In the vi/vim editor, change `imagePullPolicy` from `Always` to `IfNotPresent` or `Never`. Save and exit with `Esc` + `:wq` + `Enter`.
-
-7. **Check the logs:**
+6. **Check the logs:**
    ```bash
    kubectl logs -f deployment/log-output-dep
    ```
@@ -45,4 +39,4 @@ A simple Python application that generates a random UUID string on startup and o
 ```
 2020-03-30T12:15:17.705Z: 8523ecb1-c716-4cb6-a044-b9e83bb98e43
 2020-03-30T12:15:22.705Z: 8523ecb1-c716-4cb6-a044-b9e83bb98e43
-2020-03-30T12:15:27.705Z: 8523ecb1-c716-4cb6-a044-b9e83bb98e43
+2020-03-30T12:15:27.705Z: 8523ecb1-c716-4cb6-a044-
