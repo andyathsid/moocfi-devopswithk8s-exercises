@@ -1,0 +1,3 @@
+[submodule "material-example"]
+	path = material-example
+	url = https://github.com/kubernetes-hy/material-example.git
