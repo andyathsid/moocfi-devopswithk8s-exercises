@@ -26,7 +26,7 @@ A simple todo application API built with FastAPI.
 
 5. **Deploy the application using the manifest:**
    ```bash
-   kubectl apply -f manifest/deployment.yaml
+   kubectl apply -f todo-app/manifest/deployment.yaml
    ```
 
 6. **Check the logs:**
@@ -34,7 +34,7 @@ A simple todo application API built with FastAPI.
    kubectl logs -f deployment/todo-app-dep
    ```
 
-## API Endpoints
+## API Endpointss
 
 - `GET /` - Root endpoint
 - `GET /health` - Health check endpoint
