@@ -2,6 +2,8 @@ import os
 from datetime import datetime, UTC
 from fastapi import FastAPI
 from dotenv import load_dotenv
+from fastapi.responses import HTMLResponse
+
 import uvicorn
 
 load_dotenv()
@@ -20,9 +22,20 @@ def health_check():
         "service": "todo-app"
     }
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def root():
-    return {"message": "Todo App API is running"}
+    return """
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Todo App</title>
+      </head>
+      <body>
+        <h1>Welcome to the Todo App!</h1>
+        <p>The API is running.</p>
+      </body>
+    </html>
+    """
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
